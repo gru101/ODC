@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>job posts</title>
+  <link rel="stylesheet" href="{% static 'css/job_postings.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+    <body>
+            <nav id="navbar">
+                <img src="{% static 'img/com_logo.png' %}" id="com_logo">
+                <a href="{% url 'profile' %}"><button>profile</button></a>
+            </nav>
+            
+        <div class="content">
+            <div class="Filter">
+                
+                <form action="{% url 'job_posts' %}" method="POST" name="filter">
+                    {% csrf_token %}
+                    <label for="States">State
+                    <select name="State" id="States">
+                        <option value="All">All</option>
+                        <option value="Andaman and Nicobar Islands"> Andaman and Nicobar Islands </option>
+                        <option value="Andhra Pradesh"> Andhra Pradesh </option>
+                        <option value="Arunachal Pradesh"> Arunachal Pradesh </option>
+                        <option value="Assam"> Assam </option>
+                        <option value="Bihar"> Bihar </option>
+                        <option value="Chandigarh"> Chandigarh </option>
+                        <option value="Chhattisgarh"> Chhattisgarh </option>
+                        <option value="Dadra and Nagar Haveli and Daman and Diu"> Dadra and Nagar Haveli and Daman and Diu </option>
+                        <option value="Delhi"> Delhi </option>
+                        <option value="Goa"> Goa </option>
+                        <option value="Gujarat"> Gujarat </option>
+                        <option value="Haryana"> Haryana </option>
+                        <option value="Himachal Pradesh"> Himachal Pradesh </option>
+                        <option value="Jammu and Kashmir"> Jammu and Kashmir </option>
+                        <option value="Jharkhand"> Jharkhand </option>
+                        <option value="Karnataka"> Karnataka </option>
+                        <option value="Kerala"> Kerala </option>
+                        <option value="Ladakh"> Ladakh </option>
+                        <option value="Lakshadweep"> Lakshadweep </option>
+                        <option value="Madhya Pradesh"> Madhya Pradesh </option>
+                        <option value="Maharashtra"> Maharashtra </option>
+                        <option value="Manipur"> Manipur </option>
+                        <option value="Meghalaya"> Meghalaya </option>
+                        <option value="Mizoram"> Mizoram </option>
+                        <option value="Nagaland"> Nagaland </option>
+                        <option value="Odisha"> Odisha </option>
+                        <option value="Puducherry"> Puducherry </option>
+                        <option value="Punjab"> Punjab </option>
+                        <option value="Rajasthan"> Rajasthan </option>
+                        <option value="Sikkim"> Sikkim </option>
+                        <option value="Tamil Nadu"> Tamil Nadu </option>
+                        <option value="Telangana"> Telangana </option>
+                        <option value="Tripura"> Tripura </option>
+                        <option value="Uttar Pradesh"> Uttar Pradesh </option>
+                        <option value="Uttarakhand"> Uttarakhand </option>
+                        <option value="West Bengal"> West Bengal </option>
+                    </select>
+                </label>
+            
+                <label for="Cities">City
+                    <select name="City" id="Cities">
+                        <option value="All">All</option>
+                      
+                    </select>
+                </label>
+                    <button type="submit" id="filter_button">Apply Filter</button>
+                </form>
+
+            </div>
+            
+            <h3 id="job_section_heading">Jobs</h3>
+            {% for job_id in job_ids %}
+                <input type="hidden" class="applied_job {{job_id.Job_id}}" value="{{ job_id.Job_id }}">
+            {% endfor %}
+
+            <input class="hidden" id="role" value="{{ user.role }}">
+
+            <div class="Jobs">
+            {% for job_record in jobs %}
+                <div class="Job">
+                    <p class="job">Job: <span>{{ job_record.Job_Role }}</span></p>
+                    <p class="pay">Pay: <span>₹{{ job_record.Pay }}</span></p>
+                    <p class="job_state">State: <span>{{ job_record.State }}</span></p>
+                    <p class="job_city">City: <span>{{ job_record.City }}</span></p>
+                    <p class="job_desc">Description: <span>{{ job_record.Job_Description }}</span></p>
+                    <form action="{% url 'apply_job' %}" method="POST" class="job_app_form" id="form{{ job_record.id }}">
+                        {% csrf_token %}
+                        <input type="hidden" name="job_id" value="{{ job_record.id }}">
+                        <button type="submit" id="app_button" class="job_apply_button" name="apply_button" value="form{{ job_record.id }}">Apply</button>
+                    </form>
+                </div>
+            {% empty %}
+                <h2>No job posts</h2>
+            {% endfor %}
+            </div>
+        </div>
+
+        <script src="{% static 'js/job_postings.js' %}"></script>
+    </body>
+</html>

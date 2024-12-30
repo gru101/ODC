@@ -1,0 +1,260 @@
+/* Global Styles */
+@media (min-width: 427px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    button {
+        background-color: #007bff;
+        border: none;
+        padding: 0.5em 1em;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    
+    /* Navigation */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #0056b3;
+        color: white;
+    }
+    
+    nav img {
+        height: 2.5rem;
+        width: 6.5rem;
+        display: inline;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        padding: 2em 1em;
+        gap: 2em;
+    }
+    
+    .hero-section img {
+        width: 50%;
+        border-radius: 10px;
+    }
+    
+    .hero-text {
+        flex: 1;
+        padding: 1em;
+        background-color: #f1f1f1;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5em;
+        margin-bottom: 1em;
+        color: #0056b3;
+    }
+    
+    .hero-text p {
+        font-size: 1.2em;
+        text-align: justify;
+    }
+    
+    /* Why Choose Section */
+    #question {
+        text-align: center;
+        margin: 2em 0;
+    }
+    
+    #question h1 {
+        font-size: 2em;
+        color: #0056b3;
+    }
+    
+    /* Cards Section */
+    #cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        padding: 1em;
+    }
+    
+    .card {
+        background-color: #ffffff;
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        flex: 1;
+        max-width: 300px;
+    }
+    
+    .card h2 {
+        margin-bottom: 1em;
+        font-size: 1.5em;
+        color: #0056b3;
+    }
+    
+    .card p {
+        font-size: 1em;
+    }
+    
+    /* How It Works Section */
+    .working {
+        padding: 2em 1em;
+        text-align: center;
+    }
+    
+    .working h1 {
+        font-size: 2em;
+        margin-bottom: 1em;
+        color: #0056b3;
+    }
+    
+    .working p {
+        margin: 0.5em 0;
+        font-size: 1.2em;
+    }
+    
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 1em;
+        background-color: #007bff;
+        color: white;
+    }
+}
+
+@media (max-width: 427px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0056b3;
+        width: 100%;
+    }
+
+    #catering_image {
+        display: block;
+        justify-self: center;
+        height: 10rem;
+        width: 15rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        padding: 0.5rem;
+        color: white;
+    }
+
+    nav button {
+        margin: 0.5rem;
+        padding: 0.3rem;
+        border-radius: 5px;
+        border: 0px;
+    }
+
+    nav img {
+        height: 2.5rem;
+        width: 6.5rem;
+        display: inline;
+        margin: 0.5rem;
+    }
+
+    .hero-text p{
+        background-color: #f1f1f1;
+        padding: 0.5rem;
+        margin: 1rem;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        text-align: justify;
+     }
+
+    h1 {
+        font-size: 1rem;
+        text-align: center;
+        color: #0056b3;
+    }
+
+    #cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    #cards h2{
+        font-size: 0.8rem;
+    }
+
+    .card {
+        width: 50%;
+        text-align: center;
+        background-color: #f1f1f1;
+        padding: 0.5rem;
+        border-radius: 10px;
+        box-shadow: 0.2rem 0.2rem 0.2rem rgb(220, 220, 220);
+    }
+
+    .card h2 {
+        text-align: center;
+    }
+
+    .card p {
+        font-size: 0.6rem;
+    }
+
+
+    .working {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        text-align: right;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    .working p{
+        font-size: 0.8rem;
+        text-align: justify;
+        margin: 0.5rem;
+        font-style: italic;
+    }
+}

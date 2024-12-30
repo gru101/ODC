@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaterConnect | Your Gateway to Catering Opportunities</title>
+    <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+</head>
+<body>
+    <nav>
+        <img src="{% static 'img/com_logo.png' %}" alt="">
+        <a href="{% url 'signup' %}"><button type="submit" id="sign_up_button" onclick="change_color()" name="signup_button">Sign Up</button></a>
+    </nav>
+
+    <header class="hero-section">
+        <img src="{% static  'img/6157498.jpg' %}" alt="Catering Image" id="catering_image">
+        <div class="hero-text">
+            <h1>Connect, Elevate, Thrive!</h1>
+            <p>
+                Are you a catering organization looking for skilled part-time staff to elevate your events? Or an 
+                individual seeking flexible work opportunities in the vibrant catering industry? ODC bridges 
+                the gap between talent and opportunity.
+            </p>
+        </div>
+    </header>
+
+    <section id="question">
+        <h1>Why Choose ODC?</h1>
+    </section>
+
+    <section id="cards">
+        <div class="card">
+            <h2>Easy Matching</h2>
+            <p>Connect with catering professionals or job opportunities effortlessly.</p>
+        </div>
+        <div class="card">
+            <h2>Flexibility</h2>
+            <p>Work when you want, hire who you need – no strings attached.</p>
+        </div>
+        <div class="card">
+            <h2>Diverse Roles</h2>
+            <p>From chefs to servers, bartenders to event planners, we've got it all.</p>
+        </div>
+    </section>
+
+    <section class="working">
+        <h1>How It Works</h1>
+        <p><strong>Sign Up:</strong> Create your profile – it’s free and quick!</p>
+        <p><strong>Browse and Match:</strong> Explore job opportunities or find individuals tailored to your needs.</p>
+    </section>
+
+    <script>
+        function change_color() {
+            const button = document.getElementById("sign_up_button")
+            button.addEventListener('click',()=> {
+                button.style.backgroundColor = "blue";
+                button.style.color = "white";
+
+                setTimeout(()=>{
+                    button.style.backgroundColor = "white";
+                    button.style.color = "black";
+                }, 100)
+            })
+        }
+    </script>
+</body>
+</html>

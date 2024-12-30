@@ -1,0 +1,476 @@
+/* General Reset */
+@media (max-width: 426px) { 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Body */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f8f8f8;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        font-size: smaller;
+    }
+
+    #com_logo {
+        display: block;
+        height: 2rem;
+        width: 5.5rem;
+    }
+
+    .User_info_bar img {
+        margin-top: 0.2rem;
+        height: 2rem;
+        width: 2rem;
+        display: block;
+        place-self: center;
+    }
+
+    .content {
+        height: 100%;
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        width: 100%;
+        background-color: #0056b3;
+    }
+
+    .User_info_bar {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: smaller;
+    }
+
+    .User_info_bar button {
+        width: 40%;
+        border-radius: 10px;
+        background-color: #5f62ff;
+        border-width: 0px;
+        padding: 0.2rem;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+        background-color: #f5f5f5;
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 10px;
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: hsl(0, 0%, 60%);
+    }
+
+    .details p {
+       color: hsl(0, 0%, 28%);
+    }
+
+    .details span {
+        font-weight: 550;
+        color: hsl(0, 0%, 28%);
+        word-wrap: break-word;
+    }
+
+    .job_info {
+        margin: 0.5rem;
+        height: 62%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .skilladd_from {
+        display: flex;
+        font-size: 0.7rem;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 0.5rem;
+        border-radius: 10px;
+        background-color: #f5f5f5;
+
+    }
+
+    .skilladd_from textarea {
+        border: 1px solid #ffda56;
+        width: 70%;
+        border-radius: 4px;
+        padding: 0.2rem;
+    }
+
+    .skilladd_from button {
+        width: 30%;
+        border: 1px solid #ffda56;
+        background-color: white;
+        color: #ffda56;
+        font-size: x-small;
+    }
+
+    .profile_update_form {
+        font-size: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 0.5rem;
+        border-radius: 10px;
+        background-color: #f5f5f5;
+    }
+
+
+    .profile_update_form input {
+        border: 1px solid #ffaa56;
+        width: 70%;
+        border-radius: 4px;
+        padding: 0.2rem;
+    }
+
+    .profile_update_form button {
+        width: 30%;
+        border: 1px solid #ffaa56;
+        background-color: white;
+        color: #ffaa56;
+        font-size: x-small;
+    }
+
+    .jobs {
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column;
+        align-items: center;
+        align-self: flex-start;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        background-color: white;
+        font-size: small;
+        width: 100%;
+        height: 90%;
+        overflow-y: scroll;
+    }
+
+    .jobs >*:nth-child(1) {
+        font-size: 1rem;
+        font-weight: 550;
+    }
+
+    .job {
+        display: flex;
+        gap: 0.3rem;
+        flex-direction: column;
+        padding: 0.5rem;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        font: xx-small;
+        border: 1px solid #ddd;
+        width: 92%;
+        height: fit-content;
+    }
+
+       
+    .job p:nth-child(1) {
+        font-size: 1rem;
+        color: hsl(0, 0%, 60%);
+    }
+
+    .job p:nth-child(2) {
+        font-size: 0.9rem;
+        color: hsl(0, 0%, 60%);
+    }
+
+    .job p:not(:nth-child(-n+2)){
+        font-size: 0.7rem;
+    }
+
+    span {
+        font-weight: 550;
+        color: #414141;
+    }
+
+    .job button{
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+        width: 30%;
+        border-radius: 5px;
+        border-width: 0px;
+        background-color: #ffe97d;
+        padding: 0.2rem;
+    }
+
+    #Logout {
+        padding: 0.2rem;
+        width: 20%;
+        border-radius: 10px;
+        background-color: #ff4040;
+        border-width: 0px;
+        font-weight: 600;
+        color: white;
+        place-self: center;
+        display: block;
+    }
+
+    .hidden {
+        display: none;
+    }   
+}
+
+
+/* For desktop  Screen */
+
+@media (min-width: 426px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Body */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f8f8f8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        gap: 0.5rem;
+        width: 70%;   
+        height: 100%;
+    }
+
+    nav {
+        grid-area: 1 / 1 / 2 / -1;
+        display: flex;
+        width: 100%;
+        background-color: #0056b3;
+    }
+
+    #com_logo {
+        display: block;
+        height: 2rem;
+        width: 5.5rem;
+        margin: auto;
+    }
+
+    img {
+        height: 3rem;
+        width: 3rem;
+        display: block;
+    }
+
+    .User_info_bar {
+        grid-area: 2 / 1 / 10 / 4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        align-items: center;
+        background-color: white;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+    }
+    
+    .details {
+        align-self: flex-start;
+        font-size: small;
+        font-weight: 500;
+        background-color: #f5f5f5;
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: hsl(0, 0%, 60%);
+        line-height: 1rem;
+    }
+
+    .details >p {
+        font-weight: 500;
+       color: hsl(0, 0%, 28%);
+    }
+
+    .details span {
+        font-weight: 550;
+        color: hsl(0, 0%, 28%);
+        word-wrap: break-word;
+    } 
+
+    .job_info {
+        grid-area: 2 / 4 / 10 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 3px;
+        background-color: white;
+        border: 1px solid #ddd;
+    }
+
+    .skilladd_from {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 10px;
+        background-color: hsl(0, 0%, 96%);
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: hsl(0, 0%, 15%);
+    }
+
+    .skilladd_from textarea {
+        border: 1px solid #ffda56;
+        width: 70%;
+        border-radius: 4px;
+        padding: 0.2rem;
+    }
+
+    .skilladd_from button {
+        margin-top: 1rem;
+        padding: 0.2rem;
+        border-radius: 5px;
+        width: 4rem;
+        border: 1px solid #ffda56;
+        background-color: white;
+        color: #ffda56;
+        font-size: small;
+
+    }
+
+    .profile_update_form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 10px;
+        background-color: hsl(0, 0%, 96%);
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: hsl(0, 0%, 15%);
+    }
+
+
+    .profile_update_form input {
+        border: 1px solid #ffaa56;
+        width: 70%;
+        border-radius: 4px;
+        padding: 0.2rem;
+    }
+
+    .profile_update_form button {
+        padding: 0.2rem;
+        border-radius: 5px;
+        margin-top: 1rem;
+        width: 4rem;
+        border: 1px solid #ffaa56;
+        background-color: white;
+        color: #ffaa56;
+        font-size: small;
+    }
+
+    #Logout {
+        grid-area: 10 / 1 / 11 / 4;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border-radius: 10px;
+        background-color: #ff4040;
+        border-width: 0px;
+        font-weight: 600;
+        color: white;
+        width: 100%;
+    }
+
+    #post_job_button{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        padding: 0.5rem;
+        width: 50%;
+        border-radius: 10px;
+        background-color: #444f85;
+        border-width: 0px;
+        color: white;
+        align-self: flex-start;
+    }
+
+    .jobs {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        align-self: flex-start;
+        margin: 1rem;
+        background-color: white;
+        border-radius: 10px;
+        width: 90%;
+        height: 90%;
+        overflow-y: scroll;
+    }
+
+    .job {
+        display: flex;
+        gap: 0.3rem;
+        flex-direction: column;
+        padding: 0.5rem;
+        background-color: hsl(0, 0%, 96%);
+        border-radius: 10px;
+        font: xx-small;
+        border: 1px solid #ddd;
+        width: 92%;
+        height: fit-content;
+    }
+
+    .job p:nth-child(1) {
+        font-size: 1rem;
+        font-weight: 0.9rem;
+        color: hsl(0, 0%, 15%);
+    }
+
+    .job p:nth-child(2) {
+        font-size: 0.9rem;
+        color: hsl(0, 0%, 15%);
+    }
+
+    .job p:not(:nth-child(-n+2)){
+        font-size: 0.8rem;
+    }
+
+    span {
+        font-weight: 550;
+        color: #414141;
+    }
+
+    .job span {
+        font-weight: 550;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+}

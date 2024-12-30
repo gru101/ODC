@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/manager_profile.css' %}">
+</head>
+
+<body>
+    <div class="content">
+        <nav>
+            <img src="{% static 'img/com_logo.png' %}" id="com_logo">
+        </nav>
+
+            <div class="User_info_bar">
+                <img src="{% static 'img/user_icon.png' %}" alt="user_icon">
+
+                <div class="details">
+                    {% if user.is_authenticated %}
+                        <p>Name: <span class="label"> {{ user.first_name}} {{ user.last_name }}</span> </p>
+                        {% if org_name %}<p>Orgnization Name: <span class="label">{{ org_name }}</span> </p>{% endif %}
+                        <p>Contact Number: <span class="label"> {{ user.contact_number}}</span> </p>
+                        <p>Email: <span class="label">{{ user.email }}</span></p>
+                        <input type="hidden" name="role" id="role" value="{{ user.role }}">
+                        {% endif %}
+                </div>
+
+                <form action="{% url 'update_profile' %}" method="POST" name="update_details" class="profile_update_form">
+                    {% csrf_token %}
+                    <label for="new_org_name">New Organization Name: </label>
+                    <input type="text" name="new_org_name" id="new_org_name">  
+                    
+                    <button type="submit" value="{{ user.id }}">Update</button>         
+                </form>
+            
+
+                <form action="{% url 'update_profile' %}" method="POST" name="update_details" class="profile_update_form">
+                    {% csrf_token %}            
+                    <label for="new_email">New Email: </label>
+                    <input type="email" name="new_email" id="new_email">
+
+                    <label for="new_number">New Contact Number: </label>
+                    <input type="number" name="new_number" id="new_number" maxlength="10" minlength="10">
+
+                    <button type="submit" value="{{ user.id }}">Update</button>
+                </form>
+                <a href="{% url 'post_job' %}"><button id="post_job_button">Post Job</button></a>  
+            </div>
+
+            <div class="job_info">
+
+                <div class="switch_buttons">
+                    <button id="posted_jobs">Posted Jobs</button>
+                    <button id="applied_applicants">Applicants</button>
+                </div>
+
+                <div class="Applicants">
+                    {% for app in applicants %}
+                        <div class="applicant job{{app.Job__id}}">
+                            <p>Job Id: <span class="job_id">{{ app.Job__id }}</span> </p>
+                            <p>Posted Date: <span>{{ app.Job__Posted_Date }}</span></p>
+                            <div class="status">
+                                <p class="app_name">Name: <span>{{ app.Applied_app_id__Applicant__first_name }} {{ app.Applied_app_id__Applicant__last_name }}</span></p>
+                                <p class="skills">Skills: <span>{{ app.Applied_app_id__Skills }}</span></p>
+                                <p class="app_contact_number">Contact Number: <span>{{ app.Applied_app_id__Applicant__contact_number }}</span></p>
+                                <p>Application Status: <span>{{ app.Application_status }}</span></p>
+
+                                <form action="{% url 'update_job_status' %}" method="POST">
+                                    {% csrf_token %}
+                                    <select name="application_status" class="application_status">
+                                        <option value="Pending">Pending</option>
+                                        <option value="Accepted">Accepted</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+
+                                    <input type="hidden" name="application_id" value="{{ app.Job__id }}">
+                                   <input type="submit" class="update_status_button" value="Update Status">
+                                </form>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No Applicants</p>
+                    {% endfor %}
+                </div>
+
+                <div class="jobs">
+                    {% for job in jobs %}
+                    <div class="job">
+                        <p class="job_id">Job id: <span>{{ job.id }}</span></p>
+                        <p class="posted_date">Posted Date: <span>{{ job.Posted_Date }}</span></p>
+
+                        <p class="job_role">Job Role: <span>{{ job.Job_Role }}</span></p>
+                        <p class="pay">Pay: <span>{{ job.Pay }}</span></p>
+              
+                        <p class="state">State: <span>{{ job.State }}</span></p>
+                        <p class="city">City: <span>{{ job.City }}</span></p>
+
+                        <p class="address">Address: <span>{{ job.Reporting_Address }}</span></p>
+                        <button class="Show_applicant_button" value="{{ job.id }}">Show Applicants</button>
+                    </div>
+                    {% empty %}
+                        <p>No Jobs Posted</p>
+                    {% endfor %}
+                </div>
+                
+            </div>
+            <form action="{% url 'profile' %}" method="POST" id="logout_form">
+                {% csrf_token %}
+                <button id="Logout" type="submit" name="Logout" value="Logout">Logout</button>
+            </form>
+        </div>
+<script src="{% static 'js/employer_profile.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/applicant_profile.css' %}">
+</head>
+
+<body>
+    <div class="content">
+        <nav>
+            <img src="{% static 'img/com_logo.png' %}" id="com_logo">
+        </nav>
+
+            <div class="User_info_bar">
+                <img src="{% static 'img/user_icon.png' %}" alt="user_icon">
+
+                <div class="details">
+                    {% if user.is_authenticated %}
+                        <p>Name:<span class="label" id="Name"> {{ user.first_name }} {{ user.last_name }}</span></p>
+                        {% if skills %}
+                                <p>Skills:<span class="label" id="Skills"> {{ skills }} </span></p>
+                            {% else %}
+                                <p>Skills:<span class="label" id="Skills"> Not Updated</span> </p>
+                        {% endif %}
+                        <p>Email: <span class="label" id="Email">{{ user.email }}</span></p>
+                        <p>Contact Number:<span class="label" id="Contact_number"> {{ user.contact_number }}</span> </p>
+                    {% endif %}
+                </div>
+
+                    <form action="{% url 'update_profile' %}" method="POST" name="skill_add" id="skill_add{{ user.id }}" class="skilladd_from">
+                        {% csrf_token %}
+                        <label for="skills">Add Skills: </label>
+                        <textarea name="skills" placeholder="Enter your skills" required></textarea>
+
+                        <button type="submit" value="{{ user.id }}">Add</button>
+                    </form>
+
+                    {% if email_exists == True %}
+                        <p style="color: red;" id="email_exists_message" class="hidden">The Email already is used by someone else.</p>
+                        <input type="hidden" id="email_exists" value="{{ email_exists }}">
+                    {% endif %}
+
+                    {% if number_exists == True %}
+                        <p style="color: red;" id="number_exists_message" class="hidden">The Contact Number is already used by someone else.</p>
+                        <input type="hidden" id="number_exists" value="{{ number_exists }}">
+                    {% endif %}
+
+                    <form action="{% url 'update_profile' %}" method="POST" name="update_details" class="profile_update_form">
+                        {% csrf_token %}
+                        <label for="new_email">New Email: </label>
+                        <input type="email" name="new_email" id="new_email">
+
+                        <label for="new_number">New Contact Number: </label>
+                        <input type="number" name="new_number" id="new_number" maxlength="10" minlength="10">
+
+                        <button type="submit" value="{{ user.id }}">Update</button>
+                    </form>
+                </div>
+
+            <div class="job_info">
+
+                <div class="jobs">
+                    <p>Applied Jobs</p>
+                    {% for job in jobs %}
+                        <div class="job">
+                            <p class="job_role">Job Role: <span>{{ job.Job_Role }}</span></p>
+                            <p class="pay">Pay: <span>₹{{ job.Pay }}</span></p>
+                            <p class="Description">Description: <span> {{ job.Job_Description }} </span></p>
+                            <p class="Location">Location: <span> {{ job.State }}, {{ job.City }}</span></p>
+                            <p class="address">Address: <span>{{ job.Reporting_Address }}</span></p>
+                            <p class="contact_number">Contact Number: <span>{{ job.contact_number }}</span></p>
+                            <p class="applied_date">Applied Date: <span>{{ job.applied_date }}</span></p>
+                            <p class="status">Application Status: <span>{{ job.status }}</span></p>
+                        </div>
+                    {% empty %}
+                            <p>No Jobs Applied</p>
+                    {% endfor %} 
+                </div>
+                
+            </div>
+            <form action="{% url 'profile' %}" method="POST" id="logout_form">
+                {% csrf_token %}
+                <button id="Logout" type="submit" value="Logout" name="Logout">Logout</button>
+            </form>
+        </div>
+<script src="{% static 'js/applicant_profile.js' %}"></script>
+</body>
+</html>
