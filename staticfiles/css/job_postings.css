@@ -1,0 +1,452 @@
+/* Mobile-specific styles */
+@media (max-width: 427px) {
+    /* Global Styles */
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   body {
+       display: flex;
+       flex-direction: column;
+       font-family: 'Montserrat', sans-serif;
+       height: 100vh;
+       background-color: rgb(241, 241, 241);
+   }
+
+   nav {
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       background-color: #0056b3;
+
+   }
+
+   .confirm_message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    width: fit-content;
+  }
+  
+  .confirm_message button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #yes_button {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  #no_button {
+    background-color: #f44336;
+    color: white;
+  }
+
+   nav p{
+       margin: 0.5rem;
+       font-size: larger;
+       font-weight: bolder;
+       color: white;
+   }
+   
+   nav button {
+       margin: 0.5rem;
+       padding: 0.2rem;
+       border-radius: 5px;
+       border-width: 0px;
+   }
+
+    #com_logo {
+         height: 2rem;
+         width: 6rem;
+         display: block;
+         margin: 0.5rem;
+    }
+   .Filter {
+       display: flex;
+       flex-direction: row;
+       justify-content: space-around;
+       align-items: center;
+       gap: 0.3rem;
+       margin: 0.5rem;
+       padding: 0.5rem;
+       border-radius: 10px;
+       font-size: x-small;       
+       background-color: white;
+   }
+
+   .Filter label{
+    font-weight: 550;
+    color: hsl(0, 0%, 25%);
+    }
+
+   .Filter select{
+    margin-left: 0.5rem;
+   }
+
+   .Filter form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+   }
+
+   #filter_button{
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+    font-size: x-small;
+    font-weight: 550;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 4rem;
+    background-color: hsl(211, 100%, 75%);
+    border-width: 0px;
+   }
+
+   option {
+       font-style: italic;
+       font-size: x-small;
+       border-color:gray ;
+   }
+
+   select {
+       border-width: 0.5px;
+       border-color: gray;
+       width: 40%;
+       border-radius: 10px;
+   }
+
+   h3 {
+       margin: 0.5rem;
+   }
+
+   .Pay {
+       accent-color: rgb(93, 93, 255);
+   }
+
+   .Jobs {
+       display: flex;
+       flex-direction: column;
+       gap: 0.5rem;
+       margin: 0.5rem;
+       height: 70%;
+       overflow-y: scroll;
+       overflow-x: scroll;
+   }
+
+   .jobs_Heading {
+       font-size: 1.5rem;
+       font-weight: 550; 
+   }
+
+   .Job {
+       background-color: white;
+       display: grid;
+       grid-template-columns: repeat(6, fit-content(100%));
+       grid-template-rows: repeat(6,fit-content(100%));
+       color: hsl(0, 0%, 25%);
+       padding: 0.5rem;
+       gap: 0.5rem;
+       border-radius: 10px;
+       font-size: x-small;
+   }
+
+   .hidden {
+    display: none;
+   }
+
+   .confirm_message p {
+    font-size: x-small;
+   }
+
+   .yes_no_buttons {
+    display: flex;
+   }
+
+   .job {
+       grid-area: 1 / 1 / 2 / 2;
+   }
+
+   .pay {
+       grid-area: 1 / 2 / 2 / 3;
+   }
+
+   .job_state {
+       grid-area: 2 / 1 / 3 / 2;
+   }
+
+   .job_city {
+       grid-area: 2 / 2 / 3 / 3;
+   }
+
+   .num_applied {
+       grid-area: 1 / 3 / 2 / 4;
+   }
+
+   .job_desc {
+       grid-area: 3 / 1 / 4 / -1;
+   }
+
+   .job_app_form {
+    grid-area: 5 / 1 / -1 / 2;
+   }
+
+   .job, .pay, .job_state, .job_city, .num_applied, .job_desc {
+       color: rgb(47, 47, 47);
+       font-weight: 550;
+   } 
+
+
+   .Job span {
+       color: black;
+       font-weight: 550;
+       font-style: italic;
+   }
+
+   .Jobs button {
+       grid-area: 4 / 1 / 5 / 2;
+       border-radius: 5px;
+       border-width: 0px;
+       background-color: aquamarine;
+       padding: 0.2rem;
+       font-weight: 550;
+       font-size: x-small;
+       width: max-content;
+   }
+
+}   
+
+@media (min-width: 427px) {
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   body {
+       height: 100vh;
+       width: 100vw;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       font-family: 'Montserrat', sans-serif;
+   }
+
+   .hidden {
+    display: none;
+   }
+  
+  /* Style for confirmation message box */
+  .confirm_message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .confirm_message button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #yes_button {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  #no_button {
+    background-color: #f44336;
+    color: white;
+  }
+
+   #navbar {
+       width: 100%;
+       display: flex;
+       background-color: #0056b3;
+       align-items: center;
+       justify-content: space-between;
+   }
+
+   #navbar button {
+       font-size: 1rem;
+       border: 0px;
+       border-radius: 10px;
+       padding: 0.5rem;
+       margin: 1rem;
+   }
+
+   #com_logo {
+    margin: 1rem;
+    height: 3rem;
+    width: 8rem;
+    display: block;
+    }
+
+
+   option {
+       font-style: italic;
+       border-color:gray;
+   }
+
+   label {
+       font-weight: 600;
+   }
+
+   .content {
+       height: 100%;
+       width: 70%;
+       border-radius: 0.2rem;
+        background-color: hsl(0, 0%, 95%);
+    }
+   
+   .Filter {
+       display: flex;
+       margin: 1rem  1rem  1rem 1rem;
+       padding: 1rem;
+       gap: 0.5rem;
+       font-size: larger;
+       background-color: hsl(0, 0%, 88%);
+       color: hsl(0, 0%, 25%);
+       border-radius: 10px;
+   }
+
+   .Filter label{
+     font-size: medium;    
+   }
+
+   .Filter select {
+    height: fit-content;
+    width: 10rem;
+    border-radius: 10px;
+    padding: 0.1rem;
+    border: 1px solid hsl(0, 0%, 60%);
+   }
+
+   #filter_button{
+    padding: 0.2rem;
+    margin-left: 2rem;
+    font-size: x-small;
+    font-weight: 550;
+    border-radius: 5px;
+    border-width: 0px;
+    width: 4rem;
+    height: 1.5rem;
+    background-color: hsl(211, 100%, 75%);
+   }
+
+   #job_section_heading {
+    font-size: 2.5rem;
+    margin-left: 1rem;
+   }
+
+   .Jobs {
+       grid-area: 2 / 3 / -1 / -1;
+       margin-bottom: 1rem;
+       border-radius: 10px;
+       padding: 1rem;
+       overflow-y: scroll;
+       height: 85%;
+   }
+
+   .Jobs:last-child {
+    padding-bottom: 2rem;
+   }
+
+   .Job {
+       display: grid;
+       grid-template-columns: repeat(5, fit-content(100%));
+       grid-template-rows: repeat(5, fit-content(100%));
+       background-color:  white;
+       color: hsl(0, 0%, 25%);
+       padding: 1rem;
+       margin-top:1rem;
+       border-radius: 10px;
+       font-size: medium;
+       gap: 0.5rem;
+       width: 70%;
+   }
+
+   .job {
+       grid-area: 1 / 1 / 2 / 2;
+   }
+
+   .pay {
+       grid-area: 1 / 2 / 2 / 3;
+   }
+
+   .job_state {
+       grid-area: 2 / 1 / 3 / 2;
+   }
+
+   .job_city {
+       grid-area: 2 / 2 / 3 / 3;
+   }
+
+   .num_applied {
+       grid-area: 1 / 3 / 2 / 4;
+   }
+
+   .job_desc {
+       grid-area: 3 / 1 / 5 / 4;
+   }
+
+   .desc {
+       grid-area: 3 / 2 / 4 / 3;
+       text-align: justify;
+   }
+
+   .job_app_form {
+    grid-area: 5 / 1 / -1 / 2;
+    width: 4rem;
+   }
+
+   #app_button {
+       grid-area: 4 / 1 / 5 / 2;
+   }
+
+   .Job span {
+       color: rgb(0, 0, 0);
+       font-weight: 500;
+       padding: 1rem;
+   }
+
+   .Jobs button {
+       grid-area: 4 / 1 / 6 / 2;
+       height: 100%;
+       width: 100%;
+       border-radius: 5px;
+       border-width: 0px;
+       background-color: aquamarine;
+       font-weight: 550;
+       padding: 0.5rem;
+   }
+
+
+
+   .job, .pay, .job_state, .job_city, .num_applied, .job_desc, .desc {
+       color: rgb(47, 47, 47);
+       font-weight: 550;
+   }
+
+}

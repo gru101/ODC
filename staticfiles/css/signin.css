@@ -1,0 +1,152 @@
+@media (min-width: 427px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        height: 100vh;
+        width: 50%;
+        background-color: #032cfc;
+        color: white;
+    }
+
+    .banner img{
+        height: 12rem;
+        width: 37rem;
+    }
+
+    #signin-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 50%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    label {
+        margin-top: 1rem;
+    }
+
+    input {
+        border-width: 0px 0px 2px 0px;
+        border-color: #032cfc;
+        background-color: rgb(246, 246, 246);
+        height: 1.5rem;
+        width: 15rem;
+        padding: 0.5rem;
+        border-radius: 2px;
+    }
+
+    #signin-form button{
+        margin-top: 2.5rem;
+        padding: 0.5rem;
+        border-radius: 5px;
+        border-width: 0px;
+        background-color: #3d5dff;
+        color: white;
+    }
+
+    #signin-form p{
+        margin-top: 2rem;
+    }
+
+}
+
+@media (max-width: 427px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .banner {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        background-color: #032cfc;
+        color: white;
+        padding: 0.5rem;
+    }
+
+    .banner img {
+        height: 3rem;
+        width: 8rem;
+    }
+
+    #signin-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        background-color: #f9f9f9;
+        border-width: 0px 0px 2px 0px;
+        border-radius: 1px;
+        border-color: #032cfc;
+        padding: 0.3rem;
+        width: 60vw;
+    }
+
+    select {
+        background-color: #f9f9f9;
+        border-width: 0px 0px 2px 0px;
+        border-radius: 1px;
+        border-color: #032cfc;
+        padding: 0.3rem;
+        width: 60vw;
+    }
+
+    label {
+        margin-top: 0.8rem;
+    }
+
+
+    #signin-form button{
+        align-self: center;
+        margin: 2rem;
+        width: 7rem;
+        height: 2rem;
+        border-radius: 1rem;
+        border: rgb(88, 88, 149) solid 1px;
+        background-color: #ced0de;
+        color: #0728cd;
+    }
+
+}

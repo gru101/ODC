@@ -1,0 +1,169 @@
+/*For mobile*/
+@media (max-width: 427px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 4rem;
+        background-color: #0056b3;
+    }
+
+    header img {
+        height: 2.7rem;
+        width: 7rem;
+    }
+
+
+    .Post-job  {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .Post-job  label {
+        margin-top: 0.5rem;
+        font-weight: 500;
+        width: 15rem;
+    }
+
+    .Post-job  input, textarea{
+        background-color: rgb(246, 246, 246);
+        border-width: 0px 0px 2px 0px;
+        border-color: blue;
+        border-radius: 2px;
+        height: 1.5rem;
+        padding: 0.5rem;
+
+    }
+
+    select {
+        height: max-content;
+        width: 10rem;
+        border-radius: 5px;
+    }
+
+    textarea {
+        height: 4rem;
+    }
+
+    button {
+        padding: 0.5rem;
+        width: 6rem;
+        border-radius: 5px;
+        border-width: 0px;
+        background-color: rgb(35, 35, 255);
+        color: white;
+    }
+
+    span {
+        font-size: small;
+        font-style: italic;
+    }   
+}
+
+/*For desktop*/
+@media (min-width: 427px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        font-family:  'Montserrat', sans-serif;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 4rem;
+        background-color: #0056b3;
+    }
+
+    header img {
+        height: 3rem;
+        width: 8rem;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80vw;
+    }
+
+    .Post-job {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem;
+        background-color: #f5f5f5;    
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px gray;
+    }
+
+    label, input, textarea {
+        align-self: start;
+        margin-left: 35%;
+    }
+
+    label {
+        margin-top: 1rem;
+        width: 50%;
+    }
+
+    span {
+        width: 50%;
+        font-style: italic;
+        font-size: small;
+    }
+
+    input, textarea{
+        background-color: rgb(246, 246, 246);
+        border-width: 0px 0px 2px 0px;
+        border-color: blue;
+        border-radius: 2px;
+        height: 1.5rem;
+        padding: 0.5rem;
+        width: 10rem;
+    }
+
+    select {
+        height: max-content;
+        width: 10rem;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 0.5rem;
+        margin-top: 3rem;
+        width: 6rem;
+        border-radius: 5px;
+        border-width: 0px;
+        background-color: rgb(35, 35, 255);
+        color: white;
+    }
+
+}
