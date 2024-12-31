@@ -29,14 +29,15 @@ load_dotenv(env_path)
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87'
 import os
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['odc-red.vercel.app',
-                 'odc-etjm5zkz3-gru101s-projects.vercel.app']
+                 'odc-etjm5zkz3-gru101s-projects.vercel.app',
+                 '127.0.0.1']
 
 
 # Application definition
