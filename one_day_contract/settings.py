@@ -37,7 +37,8 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['odc-red.vercel.app',
                  'odc-etjm5zkz3-gru101s-projects.vercel.app',
-                 '127.0.0.1']
+                 '127.0.0.1',
+                 'odc-ghqc.onrender.com']
 
 
 # Application definition
