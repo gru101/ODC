@@ -1,20 +1,27 @@
-One Day Contract (ODC) – A Web Platform for One-Day Hiring
+# 📝 One Day Contract (ODC) – A Web Platform for One-Day Hiring
 
-📄 Description
-One Day Contract (ODC) is a web-based hiring platform built using Django. It connects individuals looking for short-term catering or event-based jobs with companies or recruiters offering one-day contracts. The platform simplifies the job-posting and application process through a clean, two-sided interface.
+One Day Contract (ODC) is a Django-based web application that connects individuals seeking short-term catering or event-based jobs with companies or recruiters offering one-day contracts. The platform simplifies hiring by allowing recruiters to post jobs and applicants to apply within minutes.
 
-🚀 Features
-🧑‍💼 Separate dashboards for Recruiters and Job Seekers
-📄 Job posting and management
-🔍 Job search and filtering
-✅ Real-time application tracking
-🔐 User authentication and role-based access
-📊 Admin control for managing users and listings
+---
 
-🔧 Tech Stack
-Backend: Django, Python
-Frontend: HTML, CSS, JavaScript, Django Templates
-Database: SQLite 
+## 🚀 Features
+
+- 👥 Separate dashboards for Recruiters and Job Seekers  
+- 📄 Post, manage, and track job applications  
+- 🔍 Job search and filtering functionality  
+- 🔐 Secure user authentication and role-based access  
+- 📊 Admin panel for user and job post management  
+
+---
+
+## 🛠 Tech Stack
+
+- **Backend:** Django, Python  
+- **Frontend:** HTML, CSS, JavaScript, Django Templates  
+- **Database:** SQLite (easily extendable to PostgreSQL/MySQL)  
+- **Version Control:** Git & GitHub  
+
+---
 
 
 ![Screenshot (52)](https://github.com/user-attachments/assets/41c67f01-8278-4ac4-bebc-eea203284b47)
